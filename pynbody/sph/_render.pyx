@@ -134,7 +134,7 @@ def render_image(int nx, int ny,
                  np.ndarray[fused_input_type_5,ndim=1] rho,
                  fixed_input_type smooth_lo, fixed_input_type smooth_hi,
                  kernel,
-                 wrap_offsets_x=[0], wrap_offsets_y=[0]) :
+                 np.ndarray[np.float64_t, ndim=1] wrap_offsets_x, np.ndarray[np.float64_t, ndim=1] wrap_offsets_y) :
 
     cdef fixed_input_type pixel_dx = (x2-x1)/nx
     cdef fixed_input_type pixel_dy = (y2-y1)/ny

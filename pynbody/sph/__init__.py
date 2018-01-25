@@ -37,7 +37,7 @@ import os
 
 
 def _get_threaded_image():
-    return config_parser.getboolean('sph', 'threaded-image') and config['number_of_threads']
+    return config_parser.getboolean('sph', 'threaded-image') and config['threading']
 
 _threaded_image = _get_threaded_image()
 _approximate_image = config_parser.getboolean('sph', 'approximate-fast-images')

@@ -70,12 +70,12 @@ def _get_basic_config_from_parser(config_parser):
         except ValueError:
             pass
 
-    config['threading'] = config_parser.get('general', 'threading')
+    config['threading'] = config_parser.getboolean('general', 'threading')
     config['number_of_threads'] = int(
         config_parser.get('general', 'number_of_threads'))
 
     if config['number_of_threads']<0:
-        config['number_of_threads']=multiprocessing.cpu_count()
+        config['number_of_threads'] = multiprocessing.cpu_count()
 
     config['gravity_calculation_mode'] = config_parser.get(
         'general', 'gravity_calculation_mode')
